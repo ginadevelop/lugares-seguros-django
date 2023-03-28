@@ -90,20 +90,13 @@ WSGI_APPLICATION = 'lugares_seguros.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-PG_DB = config('POSTGRES_DB', default='')
-PG_USER = config('POSTGRES_USER', default='')
-PG_PASSWD = config('POSTGRES_PASSWORD', default='')
-PG_HOST = config('POSTGRES_HOST', default='127.0.0.1')
-PG_PORT = config('POSTGRES_PORT', cast=int, default=5432)
 
+
+# DATABASES
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': PG_DB,
-        'USER': PG_USER,
-        'PASSWORD': PG_PASSWD,
-        'HOST': PG_HOST,
-        'PORT': PG_PORT,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3'
     }
 }
 
